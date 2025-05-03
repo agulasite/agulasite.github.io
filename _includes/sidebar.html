@@ -19,14 +19,14 @@
     {% assign pages_list = site.pages | sort:"url" %}
     {% for node in pages_list %}
       {% if node.title != null %}
-        {% if node.layout == "page" %}
+        {% if node.layout == "page" and node.title != "荣誉和成就" %}
           <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url | absolute_url }}">{{ node.title }}</a>
         {% endif %}
       {% endif %}
     {% endfor %}
 
     <a class="sidebar-nav-item" href="{{ site.github.repo }}/archive/v{{ site.version }}.zip">下载</a>
-    <span class="sidebar-nav-item">网页更新日期{{ site.version }}</span>
+    <span class="sidebar-nav-item">更新日期:{{ site.version }}</span>
   </nav>
 
   <div class="sidebar-item">
